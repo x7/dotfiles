@@ -1,53 +1,53 @@
 [user]
-	name = Alex Neverov
-	email = alexmail87@gmail.com
+    name = Alex Neverov
+    email = alexmail87@gmail.com
 
 [alias]
-	a = add
+    a = add
     aa = add .
-	
-	b = branch
-	br = branch
+
+    b = branch
+    br = branch
     ba = branch --all
 
-	c = commit
-	ci = commit
+    c = commit
+    ci = commit
     cm = commit -m
-	
-	cl = clone
-	co = checkout
+
+    cl = clone
+    co = checkout
 
     d = diff
     dc = diff --cached
 
-	f = flow
-	ff = flow feature
-	ffs = flow feature start
-	fff = flow feature finish
-	
-	lp = log -9 --pretty=format:"%h' : '%s"
-	lg = log -10 --graph --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
-	lga = log --graph --all --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
-	last = log -1 HEAD
-	
-	p = push
-    po = push origin
-	
-	r = remote
-	rt = remote
-	ra = remote add origin
-	
-	s = status
-	st = status
-	
-	t = tag
+    f = flow
+    ff = flow feature
+    ffs = flow feature start
+    fff = flow feature finish
 
-	u = reset HEAD
-	unstage = reset HEAD
-	
+    lp = log -9 --pretty=format:"%h' : '%s"
+    lg = log -10 --graph --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
+    lga = log --graph --all --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
+    last = log -1 HEAD
+
+    p = push
+    po = push origin
+
+    r = remote
+    rt = remote
+    ra = remote add origin
+
+    s = status
+    st = status
+
+    t = tag
+
+    u = reset HEAD
+    unstage = reset HEAD
+
 [color]
-	ui = true
-	status = true
+    ui = true
+    status = true
 
 [core]
-	editor = vim
+    editor = vim
