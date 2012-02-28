@@ -4,7 +4,7 @@ desc "install dotfiles"
 task :install do
   replace_all = false
   Dir["{.*,*}"].each do |file|
-    next if %w[. .. Rakefile readme.md oh-my-zsh-custom].include? file
+    next if %w[. .. .git Rakefile readme.md oh-my-zsh-custom].include? file
     if File.exist?(File.join(ENV['HOME'], file))
       if File.identical? file, File.join(ENV['HOME'], file)
         puts "skipping identical ~/#{file}"
