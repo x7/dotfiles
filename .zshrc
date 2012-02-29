@@ -29,4 +29,21 @@ plugins=(archlinux git git-flow rvm rails3 ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+#Aliases
+alias lg='ls -F --group-directories-first'
+alias lga='ls -F --group-directories-first -a'
+
+alias zsrc='source ~/.zshrc'
+
+alias ack='ack -i'
+alias ri='ri -f ansi'
+
+alias tmux='TERM=screen-256color tmux'
+
+#directories
+PROJECTS=$HOME/projects/
+RAILS=$HOME/projects/rails
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
