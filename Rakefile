@@ -33,6 +33,14 @@ task :install do
   end
 end
 
+task :ohmyzsh => ["git"] do
+  system "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+end
+
+task :git do
+  system "sudo pacman -S git" unless system "which git"
+end
+
 def slink(file)
   puts "linking ~/#{file}"
   system %Q{ln -s "$PWD/#{file}" "$HOME/#{file}"}
