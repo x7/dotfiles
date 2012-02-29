@@ -31,6 +31,12 @@ task :install do
       slink file
     end
   end
+  Rake::Task[:vim].invoke
+end
+
+task :vim => :git do
+  system "git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
+  system "vim +BundleInstall +qall"
 end
 
 task :ohmyzsh => ["git"] do
