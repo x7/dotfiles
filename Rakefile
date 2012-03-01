@@ -40,6 +40,7 @@ task :vim => :git do
   system "git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
   system "vim +BundleInstall +qall"
   Rake::Task[:sparkup].invoke
+  Rake::Task[:vimproc].invoke
 end
 
 #make sparkup use python 2
@@ -48,6 +49,12 @@ task :sparkup do
   system "sed -i '1 s:.*:#!/usr/bin/env python2:' #{sparkup_path}"
   print "Sparkup env is: "
   system "head -1 #{sparkup_path}"
+end
+
+#compile vimproc
+task :vimproc do
+  #linux
+  system "make --directory=~/.vim/bundle/vimproc/ -f make_gcc.mak"
 end
 
 task :ohmyzsh => :git do
