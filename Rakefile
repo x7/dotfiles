@@ -9,7 +9,7 @@ task :install do
       if File.identical? file, File.join(ENV['HOME'], file)
         puts "skipping identical ~/#{file}"
       elsif replace_all
-        slink file
+        replace_slink file
       else
         puts "#{file} exists"
         print "overwrite ~/#{file}? [ynaq] "
