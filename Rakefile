@@ -35,10 +35,15 @@ task :install do
   Rake::Task[:ohmyzsh].invoke
 end
 
+#setup vim
 task :vim => :git do
   system "git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
   system "vim +BundleInstall +qall"
-  #make sparkup use python 2
+  Rake::Task[:sparkup].invoke
+end
+
+#make sparkup use python 2
+task :sparkup do
   sparkup_path = '~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
   system "sed -i '1 s:.*:#!/usr/bin/env python2:' #{sparkup_path}"
   print "Sparkup env is: "
