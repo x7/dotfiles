@@ -211,9 +211,7 @@ autocmd BufRead *.py nmap <F4> :w<CR>:!python %<CR>
 map <F5> :GundoToggle<CR>
 
 " F6 Solarized bg toggle
-if exists("*togglebg")
-    call togglebg#map("<F6>")
-endif
+silent! call togglebg#map("<F6>")
 
 " F7
 
