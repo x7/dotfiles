@@ -71,10 +71,13 @@ Bundle 'tyru/current-func-info.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'Rykka/ColorV'
 Bundle 'gregsexton/MatchTag'
-Bundle 'msanders/snipmate.vim'
+Bundle 'garbas/vim-snipmate'
 
 "============================================================
-" Libraries
+" Libraries\Dependencies
+Bundle 'honza/snipmate-snippets'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 Bundle 'Shougo/vimproc'
 Bundle 'L9'
 
