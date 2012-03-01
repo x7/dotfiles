@@ -39,7 +39,10 @@ task :vim => :git do
   system "git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
   system "vim +BundleInstall +qall"
   #make sparkup use python 2
-  system "sed -i '1 s:.*:#!/usr/bin/env python2:' ~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py"
+  sparkup_path = '~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py'
+  system "sed -i '1 s:.*:#!/usr/bin/env python2:' #{sparkup_path}"
+  print "Sparkup env is: "
+  system "head -1 #{sparkup_path}"
 end
 
 task :ohmyzsh => :git do
