@@ -147,6 +147,10 @@ let g:yankring_replace_n_nkey = '<c-n>'
 
 
 "============================================================
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+"============================================================
 " CtrlP
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = {
