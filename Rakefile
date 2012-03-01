@@ -41,6 +41,7 @@ task :vim => :git do
   system "vim +BundleInstall +qall"
   Rake::Task[:sparkup].invoke
   Rake::Task[:vimproc].invoke
+  Rake::Task[:ctags].invoke
 end
 
 #make sparkup use python 2
@@ -55,6 +56,12 @@ end
 task :vimproc do
   #linux
   system "make --directory=~/.vim/bundle/vimproc/ -f make_gcc.mak"
+end
+
+#install ctags
+task :ctags do
+  #archlinux
+  system "sudo pacman -S ctags" unless system "which ctags"
 end
 
 task :ohmyzsh => :git do
