@@ -155,6 +155,10 @@ let g:ctrlp_custom_ignore = {
     \ }
 
 "============================================================
+" Sparkup
+let g:sparkup = "~/.vim/bundle/vim-sparkup/ftplugin/html/"
+
+"============================================================
 "}}}
 
 " Mappings"{{{

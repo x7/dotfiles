@@ -38,6 +38,8 @@ end
 task :vim => :git do
   system "git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
   system "vim +BundleInstall +qall"
+  #make sparkup use python 2
+  system "sed -i '1 s:.*:#!/usr/bin/env python2:' ~/.vim/bundle/vim-sparkup/ftplugin/html/sparkup.py"
 end
 
 task :ohmyzsh => :git do
