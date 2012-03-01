@@ -32,6 +32,7 @@ task :install do
     end
   end
   Rake::Task[:vim].invoke
+  Rake::Task[:ohmyzsh].invoke
 end
 
 task :vim => :git do
