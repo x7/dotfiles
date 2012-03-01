@@ -71,6 +71,7 @@ Bundle 'tyru/current-func-info.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'Rykka/ColorV'
 Bundle 'gregsexton/MatchTag'
+Bundle 'msanders/snipmate.vim'
 
 "============================================================
 " Libraries
