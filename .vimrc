@@ -70,6 +70,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tyru/current-func-info.vim'
 Bundle 'sickill/vim-pasta'
 Bundle 'Rykka/ColorV'
+Bundle 'bingaman/vim-sparkup'
 Bundle 'gregsexton/MatchTag'
 Bundle 'garbas/vim-snipmate'
 
