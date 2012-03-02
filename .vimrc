@@ -63,6 +63,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'tpope/vim-repeat'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Raimondi/delimitMate'
@@ -149,6 +150,17 @@ let g:yankring_replace_n_nkey = '<c-n>'
 "============================================================
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+" SuperTab like snippets behavior.
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+"============================================================
+" Snipmate
+"map snippets trigger to CTRL+Space
+if has("gui_running")
+    let g:snips_trigger_key='<C-space>'
+else
+    let g:snips_trigger_key='<C-@>'
+end
 
 "============================================================
 " CtrlP
