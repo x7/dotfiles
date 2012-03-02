@@ -375,45 +375,6 @@ augroup Whitespace " {{{
     au FileType html,css,sass,javascript,php,python,ruby,psql,vim au BufWritePre <buffer> :silent! call <SID>StripTrailingWhitespace()
 augroup END " }}}
 
-augroup CustomStatuslines " {{{
-    "============================================================
-    autocmd!
-    " Lusty buffer list {{{
-    au BufEnter * if bufname("%") == "[LustyExplorer-Buffers]"
-                \ | let b:stl = "#[Branch] LustyExplorer#[BranchS] [>] #[FileName]%<Buffer List #[FileNameS][>>]%* %="
-                \ | endif
-    " }}}
-    " Tagbar {{{
-    au BufEnter * if bufname("%") == "__Tagbar__"
-                \ | let b:stl = "#[FileName]%< Tagbar #[FileNameS][>>]%* %="
-                \ | endif
-    " }}}
-    " Gundo {{{
-    au BufEnter * if bufname("%") == "__Gundo__"
-                \ | let b:stl = "#[Mode] GUNDO #[ModeS][>>]#[BranchS] [>] #[FileName]%<Undo tree #[FileNameS][>>]%* %="
-                \ | endif
-
-    au BufEnter * if bufname("%") == "__Gundo_Preview__"
-                \ | let b:stl = "#[Mode] GUNDO #[ModeS][>>]#[BranchS] [>] #[FileName]%<Diff preview #[FileNameS][>>]%* %="
-                \ | endif
-    " }}}
-    " Syntastic location list {{{
-    au BufEnter * if bufname("%") == "[Location List]"
-                \ | let b:stl = "#[FileName]%< Location List #[FileNameS][>>]%* %="
-                \ | endif
-    " }}}
-    " NerdTree {{{
-    au BufEnter * if bufname("%") == "NERD_tree_1"
-                \ | let b:stl = "#[Mode] NerdTree #[ModeS][>>]#[BranchS] [>] #[FileName]%< %F #[FileNameS][>>]%* %="
-                \ | endif
-    "}}}
-    " FuzzyFinder {{{
-    au BufEnter * if bufname("%") == "[fuf]"
-                \ | let b:stl = "%*#[FilenameS] [>>]#[FunctionName] %= #[FileNameS][<<]#[FileName] #[BranchS] [<] #[ModeS][<<]#[Mode] FuzzyFinder"
-                \ | endif
-    "}}}
-augroup END " }}}
-
 "============================================================
 " }}}
 
