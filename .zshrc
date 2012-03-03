@@ -26,6 +26,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(archlinux git git-flow rvm rails3 ruby)
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -45,5 +48,3 @@ alias tmux='TERM=screen-256color tmux'
 PROJECTS=$HOME/projects/
 RAILS=$HOME/projects/rails
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
