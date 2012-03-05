@@ -243,6 +243,7 @@ silent! call togglebg#map("<F6>")
 nmap <F8> :TagbarToggle<CR>
 
 " F9 paste mode toggle
+nnoremap <silent> <F9> :set invpaste<CR>
 set pastetoggle=<F9>
 
 " F10
