@@ -52,7 +52,7 @@ Bundle 'tsaleh/vim-align'
 Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/Rainbow-Parenthesis'
+Bundle 'kien/rainbow_parentheses.vim'
 
 "============================================================
 " Colorschemes
