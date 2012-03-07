@@ -2,6 +2,10 @@
     name = Alex Neverov
     email = alexmail87@gmail.com
 
+[github]
+    user = x7
+    token = !cat ~/.github.token
+
 [alias]
     a = add
     aa = add .
