@@ -1,0 +1,88 @@
+[hub]
+        protocol = https
+
+[user]
+        name = Alex
+        email = alexmail87@gmail.com
+
+[github]
+        user = x7
+        token = !cat ~/.github.token
+
+[alias]
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        rank-contributers = !$ZSH/bin/git-rank-contributers
+        count   = !git shortlog -sn
+
+        a = add
+        aa = add .
+        ap = add --patch
+
+        b = branch
+        br = branch
+        ba = branch --all
+
+        c = commit
+        ci = commit
+        cm = commit -m
+
+        cl = clone
+        co = checkout
+
+        d = diff
+        dc = diff --cached
+
+        f = flow
+        ff = flow feature
+        ffs = flow feature start
+        fff = flow feature finish
+
+        lp = log -9 --pretty=format:"%h' : '%s"
+        lg = log -10 --graph --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
+        lga = log --graph --all --pretty=format:'%C(124)%h%Creset %C(239)<%an>%Creset %x09 %s %C(81)%d%Creset%x09' --abbrev-commit --date=relative
+        last = log -1 HEAD
+
+        p = push
+        po = push origin
+
+        r = remote
+        rt = remote
+        ra = remote add origin
+
+        st = status
+        s = status
+
+        t = tag
+
+        unstage = reset HEAD
+        u = reset HEAD
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+
+[apply]
+        whitespace = nowarn
+
+[mergetool]
+        keepBackup = false
+
+[difftool]
+        prompt = false
+
+[help]
+        autocorrect = 1
+
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to surpress warning message
+        default = simple

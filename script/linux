@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+#fresh ubuntu setup
+
+CLEAR="\033[0m"
+ORANGE="\033[33m"
+
+try() {
+  $* || (echo "failed" 1>&2 && exit 1)
+}
+
+put() {
+  echo -e \\n${ORANGE}$1${CLEAR}
+}
+
+if lsb_release -c | grep -qEv 'precise|quantal|wheezy|raring'
+then
+  put "Sorry! we don't currently support that distro."
+  exit 1;
+fi
+
+#==================================================
+# Linux Essentials
+#==================================================
+put "Updating system packages ..."
+  try sudo apt-get update
+  #try sudo apt-get -y dist-upgrade
+
+put "Installing build tools ..."
+  try sudo apt-get install -y build-essential
+
+put "Installing zsh ..."
+  try sudo apt-get install -y zsh
+
+put "Changing your shell to zsh ..."
+  try sudo chsh -s `which zsh`
+
+#==================================================
+# Linux Dev Tools
+#==================================================
+put "Installing guake, awesome dropdown terminal, <F12> ... "
+  try sudo apt-get install -y guake
+
+put "Installing git, for source control management ..."
+  try sudo apt-get install -y git
+
+put "Installing base ruby build dependencies ..."
+  try sudo apt-get build-dep -y ruby1.9.3
+
+put "Installing libraries for common gem dependencies ..."
+  try sudo apt-get install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev
+
+put "Installing mysql, a good open source relational database ..."
+  #try sudo apt-get install -y postgresql postgresql-server-dev-all
+  try sudo apt-get install -y mysql-server libmysql-ruby libmysqlclient-dev
+
+put "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
+  try git clone git://github.com/ggreer/the_silver_searcher.git /tmp/the_silver_searcher
+  try sudo apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
+  try sh /tmp/the_silver_searcher/build.sh
+  try cd /tmp/the_silver_searcher
+  try sh build.sh
+  try sudo make install
+  try cd ~
+  try rm -rf /tmp/the_silver_searcher
+
+put "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
+  try sudo apt-get install -y exuberant-ctags
+
+put "Installing vim, the best text editor ..."
+  try sudo apt-get install -y vim-gtk
+
+put "Installing tmux, to save project state and switch between projects ..."
+  try sudo apt-get install -y tmux
+
+put "Installing ImageMagick, to crop and resize images ..."
+  try sudo apt-get install -y imagemagick
+
+put "Installing rbenv, to change Ruby versions ..."
+  try git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+  #configure rbenv if not configured 
+  if ! grep -qs "rbenv init" ~/.zshrc; then
+    try echo 'export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+    try echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+  fi
+  source ~/.zshrc
+
+# Never run `rbenv rehash` again
+put "Installing rbenv-gem-rehash so the shell automatically picks up binaries after installing gems with binaries..."
+  try git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+
+put "Installing rbenv plugin ruby-build, to install Rubies ..."
+  try git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+put "Installing Ruby 1.9.3-p392 ..."
+  try rbenv install 1.9.3-p392
+
+put "Setting Ruby 1.9.3-p392 as global default Ruby ..."
+  try rbenv global 1.9.3-p392
+  try rbenv shell 1.9.3-p392
+
+put "Updating to latest Rubygems version ..."
+  try gem update --system
+
+put "Installing critical Ruby gems for Rails development ..."
+  try gem install bundler mysql2 thin rails --no-document
+#==================================================
