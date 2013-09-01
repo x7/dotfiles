@@ -61,6 +61,7 @@ Bundle 'altercation/vim-colors-solarized'
 "============================================================
 " Plugins
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-endwise'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tsaleh/vim-matchit'
