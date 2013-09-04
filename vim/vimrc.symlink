@@ -72,10 +72,12 @@ Bundle 'sickill/vim-pasta'
 Bundle 'bingaman/vim-sparkup'
 Bundle 'gregsexton/MatchTag'
 Bundle 'SirVer/ultisnips'
+Bundle 'Shougo/neocomplete.vim'
 
 "============================================================
 " Libraries\Dependencies
 "Bundle 'honza/snipmate-snippets'
+Bundle 'Shougo/vimproc.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'L9'
@@ -155,6 +157,28 @@ let g:ctrlp_custom_ignore = {
 "============================================================
 " Sparkup
 let g:sparkup = "~/.vim/bundle/vim-sparkup/ftplugin/html/"
+
+"============================================================
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#use_vimproc = 1
+let g:neocomplete#enable_prefetch = 1
+
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+" Force ruby omni completion
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "============================================================
 "}}}
