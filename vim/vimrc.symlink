@@ -45,8 +45,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "   My Bundles
 "============================================================
 " UI and Navigation
-"NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdtree'
 "NeoBundle 'sjl/gundo.vim'
