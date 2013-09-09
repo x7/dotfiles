@@ -271,6 +271,7 @@ vmap <silent> <S-Down> <ESC>:execute "'<,'>move " line("'>")+1 " \| normal gv"<C
 nnoremap / /\v
 vnoremap / /\v
 cnoremap s/ s/\v
+nnoremap <Leader>s :%s/\v
 
 "============================================================
 " F-keys maps
