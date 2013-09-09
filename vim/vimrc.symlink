@@ -278,9 +278,6 @@ nnoremap <silent> <Leader>sv :w<CR>:source $MYVIMRC<CR>
 " Clear search highlighting
 nnoremap <Leader>n :nohlsearch<CR>
 
-" Highlight all instances of the current word under the cursor
-nnoremap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
-
 " Swap two words
 nnoremap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
