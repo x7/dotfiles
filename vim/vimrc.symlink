@@ -229,8 +229,32 @@ let g:neocomplete#sources#dictionary#dictionaries = {
             \ }
 
 "============================================================
-"}}}
+" GitGutter
+" must come after setting the colorscheme
+highlight SignColumn ctermbg=234
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
+"============================================================
+" Undotree
+if has("persistent_undo")
+    silent !mkdir -p ~/.vim/undofiles/
+    set undodir=~/.vim/undofiles/
+    set undofile
+endif
+
+"============================================================
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+
+"============================================================
+" IndentLine
+let g:indentLine_char = '¦'
+let g:indentLine_color_term = 235
+let g:indentLine_color_gui = '#eee8d5'
+
+"============================================================
+"}}}
 
 " Mappings"{{{
 "============================================================
