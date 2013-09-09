@@ -222,6 +222,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+let g:neocomplete#sources#dictionary#dictionaries = {
+            \ 'vimshell' : $HOME.'/.vimshell/command-history'
+            \ }
+
 "============================================================
 "}}}
 
