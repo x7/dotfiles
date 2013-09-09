@@ -191,6 +191,8 @@ hi NonText ctermfg=235 guifg=#eee8d5
 
 " Plugin options"{{{
 "============================================================
+" Signature
+let g:SignatureEnableDefaultMappings=2
 
 "============================================================
 " CtrlP
