@@ -1,6 +1,6 @@
 "============================================================
-"   .vimrc v0.2
-"   github: github.com/x7
+"   .vimrc v0.3
+"   github.com/x7/dotfiles
 "============================================================
 
 set nocompatible   " Must come first
