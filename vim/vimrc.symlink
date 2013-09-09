@@ -301,12 +301,17 @@ set pastetoggle=<F9>
 nnoremap <Leader>v <C-w>v<C-w>l
 nnoremap <Leader>h <C-w>s<C-w>j
 
-"============================================================
-" Easier split window navigation
+" Split window navigation
 nnoremap H <C-w>h
 nnoremap J <C-w>j
 nnoremap K <C-w>k
 nnoremap L <C-w>l
+
+" Split window resizing
+map <C-j> :resize +1<CR>
+map <C-k> :resize -1<CR>
+map <C-h> :vertical resize +1<CR>
+map <C-l> :vertical resize -1<CR>
 
 "============================================================
 " Capitalize
