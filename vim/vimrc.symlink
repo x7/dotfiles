@@ -259,7 +259,17 @@ nnoremap <silent> ^ :setl hls<CR>:let @/="<C-r><C-w>"<CR>
 nnoremap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Append line above to the current line
-nmap gt VkJlv$hd0Pa <ESC>0
+nnoremap gt VkJlv$hd0Pa <ESC>0
+
+" Command Window
+au CmdwinEnter * nmap <buffer> <Space> $l<C-c>
+
+" Reselect visual blcok after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Map Q to repeat the last used macro
+map Q @@
 
 " Bubble single & multiple lines
 nmap <silent> <S-Up>   :move -2<CR>
