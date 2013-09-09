@@ -232,6 +232,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let mapleader = ","
 nnoremap ; :
 inoremap jj <ESC>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Sudo write
 command! -bar -nargs=0 Sudow  silent! exec "write !sudo tee % >/dev/null"  | silent! edit!
