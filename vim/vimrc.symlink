@@ -255,6 +255,17 @@ nnoremap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 " Append line above to the current line
 nmap gt VkJlv$hd0Pa <ESC>0
 
+" Bubble single & multiple lines
+nmap <silent> <S-Up>   :move -2<CR>
+nmap <silent> <S-Down> :move +1<CR>
+vmap <silent> <S-Up>   :move -2 \| normal gv<CR>
+vmap <silent> <S-Down> <ESC>:execute "'<,'>move " line("'>")+1 " \| normal gv"<CR>
+"vmap <silent> <S-Down> :call <SID>MoveBlockDown()<CR> "{{{
+"function! s:MoveBlockDown() range
+    "execute "'<,'>m " a:lastline+1 " | normal gv"
+"endfunction
+"}}}
+
 "============================================================
 " Fix broken vim regexes when searching
 nnoremap / /\v
