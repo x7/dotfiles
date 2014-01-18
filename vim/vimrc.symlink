@@ -287,6 +287,8 @@ nnoremap ; :
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+inoremap <C-d> <C-k>
+
 " Sudo write
 command! -bar -nargs=0 Sudow  silent! exec "write !sudo tee % >/dev/null"  | silent! edit!
 
