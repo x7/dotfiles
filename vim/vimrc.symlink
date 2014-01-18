@@ -57,6 +57,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'amiorin/vim-project'
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'goldfeld/vim-seek'
+NeoBundle 'rhysd/clever-f.vim'
 
 "============================================================
 " Language Additions
@@ -268,6 +270,11 @@ if has("unix")
     Project '~/.dotfiles'
 endif
 
+"============================================================
+" Seek
+let g:seek_enable_jumps = 1
+
+"============================================================
 "}}}
 
 " Mappings"{{{
