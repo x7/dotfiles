@@ -55,6 +55,7 @@ endif
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'amiorin/vim-project'
 
 "============================================================
 " Language Additions
@@ -255,6 +256,17 @@ au Filetype rails :UltiSnipsAddFiletypes rails.ruby
 "let g:indentLine_color_gui = '#eee8d5'
 
 "============================================================
+" Project
+if has("unix")
+    call project#rc()
+
+    let g:project_use_nerdtree = 1
+
+    File '.dotfiles/vim/vimrc.symlink', 'vimrc'
+    File '.dotfiles/tmux.conf.symlink', 'tmux.conf'
+    Project '~/.dotfiles'
+endif
+
 "}}}
 
 " Mappings"{{{
