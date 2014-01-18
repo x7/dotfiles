@@ -310,7 +310,7 @@ nnoremap gt :-1norm 0d$vJ$a p
 au CmdwinEnter * nmap <buffer> <Space> $l<C-c>
 
 " Map Q to repeat the last used macro
-map Q @@
+map <Leader>q @@
 
 " Bubble single & multiple lines
 nmap <silent> <S-Up>   :move -2<CR>
