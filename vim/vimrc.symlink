@@ -178,6 +178,13 @@ set shiftwidth=4                  " And again, related
 set expandtab                     " Turn tabs into spaces
 
 set mouse=a
+
+" Disable Background Color Erase (BCE) so that color schemes
+" work properly when Vim is used inside tmux and GNU screen.
+if &term =~ '256color'
+    set t_ut=
+endif
+
 " Colorscheme
 set t_Co=256                      " Use 256 colors in terminals
 if has("gui_running")
