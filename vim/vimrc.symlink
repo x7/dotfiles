@@ -177,6 +177,7 @@ set tabstop=4                     " Global tab width
 set shiftwidth=4                  " And again, related
 set expandtab                     " Turn tabs into spaces
 
+set mouse=a
 " Colorscheme
 set t_Co=256                      " Use 256 colors in terminals
 if has("gui_running")
