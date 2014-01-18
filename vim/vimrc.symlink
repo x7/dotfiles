@@ -93,7 +93,7 @@ NeoBundle 'tyru/current-func-info.vim'
 NeoBundle 'sickill/vim-pasta'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'gregsexton/MatchTag'
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips', { 'disabled': !has('python') }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell.vim'
 "NeoBundle 'Shougo/neosnippet.vim'
@@ -238,7 +238,15 @@ endif
 
 "============================================================
 " Ultisnips
-let g:UltiSnipsExpandTrigger="<Enter>"
+set rtp+=$HOME/.dotfiles/vim
+let g:UltiSnipsExpandTrigger="<C-@>"
+let g:UltiSnipsJumpForwardTrigger='<C-@>'
+let g:UltiSnipsJumpBackwardTrigger='<C-S-@>'
+let g:UltiSnipsSnippetsDir='~/.dotfiles/vim/snippets'
+let g:UltiSnipsEditSplit='horizontal'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+
+au Filetype rails :UltiSnipsAddFiletypes rails.ruby
 
 "============================================================
 " IndentLine
