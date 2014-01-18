@@ -332,6 +332,8 @@ cnoremap s/ s/\v
 "nnoremap <Leader>s :%s/\v
 nnoremap <Leader>s :OverCommandLine<cr>%s/\v
 
+au FileType diff nmap do :diffget<CR>
+au FileType diff nmap dp :diffput<CR>
 
 "============================================================
 " F-keys maps
