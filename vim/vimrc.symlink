@@ -45,11 +45,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "   My Bundles
 "============================================================
 " UI and Navigation
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 NeoBundle 'kien/ctrlp.vim'
+if has('python')
+    NeoBundle 'sjl/gundo.vim'
+    NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+else
+    NeoBundle 'mbbill/undotree'
+    NeoBundle 'bling/vim-airline'
+endif
 NeoBundle 'scrooloose/nerdtree'
-"NeoBundle 'sjl/gundo.vim'
-NeoBundle 'mbbill/undotree'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'majutsushi/tagbar'
 
@@ -333,7 +337,11 @@ map <F3> :YRShow<CR>
 autocmd BufRead *.py nmap <F4> :w<CR>:!python %<CR>
 
 " F5 undo sidebar
-map <F5> :UndotreeToggle<CR>
+if has('python')
+    nnoremap <F5> :GundoToggle<CR>
+else
+    nnoremap <F5> :UndotreToggle<CR>
+endif
 
 " F6
 
