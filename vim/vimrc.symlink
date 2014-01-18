@@ -229,7 +229,7 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 "============================================================
-" Undotree
+" Undotree/Gundo
 if has("persistent_undo")
     silent !mkdir -p ~/.vim/undofiles/
     set undodir=~/.vim/undofiles/
@@ -283,14 +283,11 @@ nnoremap <Leader>n :nohlsearch<CR>
 nnoremap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 
 " Append line above to the current line
-nnoremap gt VkJlv$hd0Pa <ESC>0
+"nnoremap gt VkJlv$hd0Pa <ESC>0
+nnoremap gt :-1norm 0d$vJ$a p
 
-" Command Window
+" Command Window - select command
 au CmdwinEnter * nmap <buffer> <Space> $l<C-c>
-
-" Reselect visual blcok after indenting
-vnoremap < <gv
-vnoremap > >gv
 
 " Map Q to repeat the last used macro
 map Q @@
@@ -358,16 +355,16 @@ nnoremap <Leader>v <C-w>v<C-w>l
 nnoremap <Leader>h <C-w>s<C-w>j
 
 " Split window navigation
-nnoremap H <C-w>h
-nnoremap J <C-w>j
-nnoremap K <C-w>k
-nnoremap L <C-w>l
+"nnoremap H <C-w>h
+"nnoremap J <C-w>j
+"nnoremap K <C-w>k
+"nnoremap L <C-w>l
 
 " Split window resizing
-map <C-j> :resize +1<CR>
-map <C-k> :resize -1<CR>
-map <C-h> :vertical resize +1<CR>
-map <C-l> :vertical resize -1<CR>
+" map <C-j> :resize +1<CR>
+" map <C-k> :resize -1<CR>
+" map <C-h> :vertical resize +1<CR>
+" map <C-l> :vertical resize -1<CR>
 
 "============================================================
 " Capitalize
@@ -439,7 +436,7 @@ augroup Formatting
     autocmd!
 
     " Remove trailing whitespace from selected filetypes
-    au FileType html,css,sass,javascript,php,python,ruby,psql,vim
+    au FileType html,css,sass,javascript,php,python,ruby,eruby,psql,vim
                 \ au BufWritePre <buffer>
                 \ :silent! call <SID>StripTrailingWhitespace()
 
@@ -501,10 +498,11 @@ endfunction
 
 function! s:StripTrailingWhitespace()
     " mark current position
-    normal mZ
+    normal mz
     " remove trailing spaces
     %s/\s\+$//e
     " go back to your current position
-    normal `Z
+    normal `z
 endfunction
 "}}}
+
