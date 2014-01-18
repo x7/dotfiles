@@ -1,0 +1,6 @@
+[submodule "lib/fasd"]
+	path = lib/fasd
+	url = https://github.com/clvv/fasd.git
+[submodule "lib/oh-my-zsh"]
+	path = lib/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
