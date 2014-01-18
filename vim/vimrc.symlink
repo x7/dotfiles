@@ -73,7 +73,7 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'Yggdroot/indentLine'
+"NeoBundle 'Yggdroot/indentLine'
 "NeoBundle 'terryma/vim-multiple-cursors'
 
 "============================================================
@@ -250,9 +250,9 @@ au Filetype rails :UltiSnipsAddFiletypes rails.ruby
 
 "============================================================
 " IndentLine
-let g:indentLine_char = '¦'
-let g:indentLine_color_term = 235
-let g:indentLine_color_gui = '#eee8d5'
+"let g:indentLine_char = '¦'
+"let g:indentLine_color_term = 235
+"let g:indentLine_color_gui = '#eee8d5'
 
 "============================================================
 "}}}
