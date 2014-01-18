@@ -262,7 +262,7 @@ let g:indentLine_color_gui = '#eee8d5'
 
 let mapleader = ","
 nnoremap ; :
-inoremap jj <ESC>
+"inoremap jj <ESC>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
