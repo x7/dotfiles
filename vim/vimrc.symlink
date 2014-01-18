@@ -110,6 +110,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'vim-scripts/vimwiki'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'osyo-manga/vim-over'
 
 "============================================================
 " Libraries\Dependencies
@@ -328,7 +329,9 @@ vmap <silent> <S-Down> <ESC>:execute "'<,'>move " line("'>")+1 " \| normal gv"<C
 nnoremap / /\v
 vnoremap / /\v
 cnoremap s/ s/\v
-nnoremap <Leader>s :%s/\v
+"nnoremap <Leader>s :%s/\v
+nnoremap <Leader>s :OverCommandLine<cr>%s/\v
+
 
 "============================================================
 " F-keys maps
