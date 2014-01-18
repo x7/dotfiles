@@ -107,7 +107,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
             \ 'build' :
             \   { 'unix' : 'mkdir -p ~/.vim/ycmbuild && cd ~/.vim/ycmbuild && cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/cpp && make ycm_core' }
             \}
-NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mhinz/vim-signify'
 NeoBundle 'vim-scripts/vimwiki'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'osyo-manga/vim-over'
