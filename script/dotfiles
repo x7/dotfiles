@@ -97,33 +97,7 @@ setup_dotfiles () {
   done
 }
 
-setup_vim () {
-    info "Installing Vundle, bundle manager for vim..."
-    if [ ! -d ~/.vim/bundle/vundle/ ]
-    then
-        mkdir -p ~/.vim/bundle/vundle/
-    fi
-
-    if [ ! -d ~/.vim/bundle/vundle/.git/ ]
-    then
-        git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    fi
-
-    info "Installing vim bundles..."
-    vim -c "execute \"BundleInstall\" | qa"
-}
-
-setup_ohmyzsh () {
-    info "Installing Oh-My-ZSH..."
-    if [ ! -d ~/.oh-my-zsh/ ]
-    then
-        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    fi
-}
-
 setup_dotfiles
-setup_vim
-setup_ohmyzsh
 
 echo ''
 echo '  All installed!'

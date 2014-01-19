@@ -77,11 +77,6 @@ put "Installing ImageMagick, to crop and resize images ..."
 
 put "Installing rbenv, to change Ruby versions ..."
   try git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
-  #configure rbenv if not configured 
-  if ! grep -qs "rbenv init" ~/.zshrc; then
-    try echo 'export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-    try echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-  fi
   source ~/.zshrc
 
 # Never run `rbenv rehash` again
