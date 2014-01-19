@@ -1,1 +1,2 @@
-alias vim='vim +NERDTree +"winc l"' 
+alias vi='vim'
+alias vimn='vim +NERDTree'
